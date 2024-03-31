@@ -28,12 +28,11 @@ void freedom100_ibmchar(unsigned char c, unsigned char attr);
 
 void freedom100_init(void)
 {
-	/* TODO: allow line drawing characters for ADM31 with the appropriate option
-	 * ROM installed
+	/* TODO: Optimise for FREEDOM100
 	 */
 	onlyascii = 1;
 
-	term_type = TERM_ADM3;
+	term_type = TERM_FREEDOM100;
 	term_reset = freedom100_reset;
 	term_clearscr = freedom100_clearscr;
 	term_setcursor = freedom100_setcursor;
