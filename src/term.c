@@ -23,6 +23,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 void vt52_init(void);
 void ansi_init(void);
 void adm3_init(void);
+void freedom100_init(void);
 #if defined(MSDOS) || defined(__COM__)
 void pcbios_init(void);
 #endif
@@ -81,6 +82,10 @@ void term_init(void)
 
 	if(memcmp(termenv, "adm3", 4) == 0) {
 		adm3_init();
+		return;
+	}
+	if(memcmp(termenv, "freedom100", 10) == 0) {
+		freedom100_init();
 		return;
 	}
 
