@@ -40,7 +40,7 @@ VT300 and above adds a few more parameters before the curly brace:
     VT200-series).
   - *erase mode* is 0 to erase all characters of the specified
     font/size/rendition while downloading, 1 to erase only
-    the characters which re being replaced, and 2 to erase all characters.
+    the characters that are being replaced, and 2 to erase all characters.
   - *matrix size* on the VT200-series is 0 for default (7x10), 2 for 5x10, 3 for
     6x10 and 4 for 7x10. On VT300-series and up, it can be the same, or define
     the matrix width (like 15 for the full width of the VT3x0 fonts in 80x24
@@ -50,7 +50,7 @@ VT300 and above adds a few more parameters before the curly brace:
     there are more values to also specify the rows, while the previous ones are
     considered to specify 24-row modes. 11 is for 80x36, 12 for 132x36, 21 for
     80x48, and 22 for 132x48.
-  - *text/full* define wether the downloaded characters are meant for text (0 or
+  - *text/full* defines whether the downloaded characters are meant for text (0 or
     1), and the terminal needs to leave empty space around them and center them
     accordingly, or for graphics (2), in which case the whole matrix is available,
     and nearby characters are adjacent with no gap. The VT200-series in 80x24

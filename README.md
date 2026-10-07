@@ -1,5 +1,37 @@
-Termtris - tetris game for terminals
-====================================
+# Termtris with Freedom 100 support
+
+Roy Antaw's fork of [jtsiomb/termtris](https://github.com/jtsiomb/termtris), adding a Freedom 100 terminal backend. Original Termtris attribution and GNU GPL terms are retained below.
+
+## Build and select the Freedom 100 backend
+
+With a C compiler and Make available, run from the repository root:
+
+```bash
+git clone https://github.com/royedmund/termtrisfreedom.git
+cd termtrisfreedom
+make
+TERM=freedom100 ./termtris
+```
+
+Use `TERM=freedom100` only in a session connected to a compatible Freedom 100 terminal. On an ordinary ANSI terminal, run `./termtris` with your normal `TERM` setting. The backend forces ASCII output and implements screen clearing/cursor positioning; colour and cursor-visibility functions are currently empty. Hardware behaviour is not established by a successful host build alone.
+
+## Repository layout
+
+| Location | Purpose |
+| --- | --- |
+| [src/freedom100.c](src/freedom100.c) | Freedom 100 backend |
+| [src/term.c](src/term.c) | Terminal selection, including the `freedom100` name |
+| [src/](src/) | Game and other terminal backends |
+| [doc/](doc/) / [tools/](tools/) | Documentation and supporting utilities |
+| `Makefile`, `Makefile.sgi`, `Makefile.wat` | UNIX, SGI and DOS build definitions |
+| [COPYING](COPYING) | GNU GPL licence text |
+
+The platform-specific Makefiles and source layout are retained. The upstream UNIX/DOS guide below applies except where the Freedom 100 limitations above differ.
+
+---
+
+Original Termtris guide
+----------------------
 
 ![shots](http://nuclear.mutantstargoat.com/sw/termtris/img/termtris-banner.png)
 
@@ -71,7 +103,7 @@ auto-detection.
 Different terminals have different capabilities when it comes to soft character
 sets. Termtris will try to detect the terminal type and choose the correct soft
 font to load, but if it fails or you want to force a different terminal type,
-make sure to define the `TERM` environent variable. If `TERM` is undefined, or
+make sure to define the `TERM` environment variable. If `TERM` is undefined, or
 an unknown or unsupported terminal type, termtris will try to interrogate the
 terminal itself about its capabilities.
 
